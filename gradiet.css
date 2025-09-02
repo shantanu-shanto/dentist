@@ -1,0 +1,142 @@
+
+Warm Sunset Gradients
+
+/* Sunset Vibes */
+background: linear-gradient(90deg, #FF512F 0%, #F09819 50%, #FFBE0B 100%);
+
+/* Peach Dream */
+background: linear-gradient(to right, #FFAFBD 0%, #FFC3A0 60%, #FFFFFF 100%);
+
+/* Coral Reef */
+background: linear-gradient(90deg, #FF6B6B 0%, #FFE66D 50%, #FF8E53 100%);
+
+/* Orange Crush */
+background: linear-gradient(to right, #FD8451 0%, #FFBD6F 60%, #FFF2CC 100%);
+
+Purple Magic Gradients
+/* Purple Rain */
+background: linear-gradient(90deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+
+/* Lavender Fields */
+background: linear-gradient(to right, #C471ED 0%, #F64F59 60%, #FFFFFF 100%);
+
+/* Royal Purple */
+background: linear-gradient(90deg, #8360c3 0%, #2ebf91 50%, #a8edea 100%);
+
+/* Mystic Purple */
+background: linear-gradient(to right, #DA22FF 0%, #9733EE 50%, #E0E7FF 100%);
+
+
+Pink Paradise Gradients
+/* Cotton Candy */
+background: linear-gradient(90deg, #FF61D2 0%, #FE9090 60%, #FFE5E5 100%);
+
+/* Bubblegum */
+background: linear-gradient(to right, #FFB6C1 0%, #FFC0CB 50%, #FFFFFF 100%);
+
+/* Rose Gold */
+background: linear-gradient(90deg, #ED4264 0%, #FFEDBC 60%, #FFFFFF 100%);
+
+/* Strawberry Milk */
+background: linear-gradient(to right, #FF9A9E 0%, #FECFEF 50%, #FECFEF 100%);
+
+
+Green Nature Gradients
+/* Forest Fresh */
+background: linear-gradient(90deg, #72FFB6 0%, #10D164 60%, #E8F5E8 100%);
+
+/* Mint Breeze */
+background: linear-gradient(to right, #A8E6CF 0%, #88D8C0 50%, #F0FFFF 100%);
+
+/* Emerald Dream */
+background: linear-gradient(90deg, #11998e 0%, #38ef7d 60%, #E0FFF0 100%);
+
+/* Sage Wisdom */
+background: linear-gradient(to right, #305170 0%, #6DFC6B 50%, #F5FFF5 100%);
+
+Fiery Red Gradients
+
+/* Fire Sunset */
+background: linear-gradient(90deg, #FF512F 0%, #DD2476 50%, #FFE5E5 100%);
+
+/* Cherry Bomb */
+background: linear-gradient(to right, #EB3349 0%, #F45C43 60%, #FFF0F0 100%);
+
+/* Ruby Red */
+background: linear-gradient(90deg, #C33764 0%, #1D2671 50%, #E6E6FA 100%);
+
+/* Crimson Tide */
+background: linear-gradient(to right, #DC143C 0%, #FF6347 60%, #FFFFFF 100%);
+
+Electric & Neon Gradients
+
+/* Cyber Punk */
+background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 50%, #F0FFFF 100%);
+
+/* Neon Glow */
+background: linear-gradient(to right, #FF00FF 0%, #00FFFF 50%, #FFFFFF 100%);
+
+/* Electric Blue */
+background: linear-gradient(90deg, #0093E9 0%, #80D0C7 60%, #E0FFFF 100%);
+
+/* Laser Light */
+background: linear-gradient(to right, #8EC5FC 0%, #E0C3FC 50%, #FFFFFF 100%);
+
+Rainbow & Multi-Color
+
+/* Rainbow Dreams */
+background: linear-gradient(90deg, #FF6B6B 0%, #4ECDC4 25%, #45B7D1 50%, #96CEB4 75%, #FFEAA7 100%);
+
+/* Prism Effect */
+background: linear-gradient(to right, #667eea 0%, #764ba2 20%, #f093fb 40%, #4facfe 60%, #00f2fe 80%, #43e97b 100%);
+
+/* Aurora Borealis */
+background: linear-gradient(90deg, #a8edea 0%, #fed6e3 25%, #d299c2 50%, #fef9d7 75%, #dad4ec 100%);
+
+Dark & Moody Gradients
+/* Midnight Ocean */
+background: linear-gradient(90deg, #0c0c0c 0%, #1a1a2e 50%, #16213e 100%);
+
+/* Dark Purple */
+background: linear-gradient(to right, #2C1810 0%, #5D4037 50%, #8D6E63 100%);
+
+/* Shadow Play */
+background: linear-gradient(90deg, #434343 0%, #000000 60%, #2C2C2C 100%);
+
+/* Stormy Night */
+background: linear-gradient(to right, #1e3c72 0%, #2a5298 50%, #87CEEB 100%);
+
+Artistic & Creative
+
+/* Watercolor */
+background: linear-gradient(90deg, #ff9a9e 0%, #fecfef 33%, #fecfef 66%, #a8edea 100%);
+
+/* Oil Painting */
+background: linear-gradient(to right, #4568dc 0%, #b06ab3 30%, #ee9ca7 60%, #ffdde1 100%);
+
+/* Abstract Art */
+background: linear-gradient(90deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%);
+
+Pro Tips for Using These Gradients:
+Implementation:
+
+Use 90deg or to right for horizontal gradients
+
+Use to bottom for vertical gradients
+
+Use to bottom right for diagonal effects
+
+Color Stop Optimization:
+
+0% = Start color
+
+50-60% = Mid transition
+
+100% = End color (often white or light variant)
+
+Responsive Design:
+
+css
+@media (max-width: 768px) {
+  background: linear-gradient(to bottom, [your-colors]);
+}

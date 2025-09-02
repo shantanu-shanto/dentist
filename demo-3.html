@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BrightSmile Dental Clinic | Professional Dental Care</title>
+  <meta name="description" content="BrightSmile Dental Clinic offers premium dental services including preventive, cosmetic, and restorative treatments in a comfortable environment.">
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <style>
+    :root{
+      --primary:#2a9d8f;
+      --primary-dark:#1d7874;
+      --secondary:#e9c46a;
+      --dark:#264653;
+      --light:#f8f9fa;
+      --white:#ffffff;
+      --gray:#6c757d;
+      --dark-gray:#343a40;
+      --accent:#2D9CDB;
+      --accent-dark:#1E88C7;
+      --bg-gradient: radial-gradient(1200px 600px at 10% 10%, rgba(45,156,219,0.08), transparent 50%), radial-gradient(900px 400px at 90% 20%, rgba(233,196,106,0.12), transparent 60%), radial-gradient(1100px 500px at 30% 90%, rgba(42,157,143,0.10), transparent 55%);
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      font-family:'Poppins',sans-serif;
+      color:var(--dark-gray);
+      line-height:1.6;
+      overflow-x:hidden;
+      background:var(--light);
+    }
+    h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:600}
+    a{text-decoration:none;color:inherit}
+    ul{list-style:none}
+    img{max-width:100%;height:auto}
+    .container{width:100%;max-width:1200px;margin:0 auto;padding:0 20px}
+
+    .btn{
+      display:inline-block;padding:12px 30px;background-color:var(--accent);color:var(--white);
+      border-radius:30px;font-weight:600;transition:all .3s ease;border:none;cursor:pointer
+    }
+    .btn:hover{background:var(--accent-dark);transform:translateY(-2px);box-shadow:0 10px 20px rgba(0,0,0,.15)}
+    .btn-outline{background:transparent;border:2px solid var(--white);color:var(--white)}
+    .btn-outline:hover{background:rgba(255,255,255,.1)}
+
+    .section{padding:80px 0;position:relative}
+    .section-title{font-size:2.5rem;margin-bottom:1rem;text-align:center;color:var(--dark)}
+    .section-subtitle{text-align:center;max-width:720px;margin:0 auto 40px;color:var(--gray)}
+
+    /* Header */
+    header{
+      position:fixed;top:0;left:0;width:100%;
+      padding:20px 0;z-index:1000;transition:all .3s ease;
+      background-color:rgba(255,255,255,.95);box-shadow:0 2px 10px rgba(0,0,0,.08);
+      backdrop-filter:saturate(180%) blur(8px);
+    }
+    header.scrolled{padding:14px 0;background:rgba(255,255,255,.98);box-shadow:0 6px 24px rgba(0,0,0,.10)}
+    .header-container{display:flex;justify-content:space-between;align-items:center}
+    .logo{display:flex;align-items:center;font-size:1.5rem;font-weight:700;color:var(--primary);gap:10px}
+    .logo img{height:40px}
+
+    nav .nav-menu{display:flex}
+    .nav-menu li{margin-left:28px}
+    .nav-menu a{font-weight:500;position:relative;transition:color .3s ease}
+    .nav-menu a:hover{color:var(--primary)}
+    .nav-menu a::after{content:'';position:absolute;bottom:-6px;left:0;width:0;height:2px;background:var(--primary);transition:width .3s ease}
+    .nav-menu a:hover::after{width:100%}
+    .hamburger{display:none;cursor:pointer;font-size:1.5rem}
+
+    /* Hero */
+    .hero{
+      position:relative;height:100vh;overflow:hidden;display:flex;justify-content:space-between;align-items:center;padding:0 5%;
+      background:var(--bg-gradient);
+    }
+    .video-background{position:absolute;inset:0;z-index:-1;opacity:0;animation:fadeInVideo 2.2s ease-in-out forwards}
+    .video-background::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg, rgba(38,70,83,.55), rgba(38,70,83,.15) 40%, rgba(0,0,0,0) 70%)}
+    .video-background video{width:100%;height:100%;object-fit:cover;object-position:center}
+    @keyframes fadeInVideo{from{opacity:0}to{opacity:1}}
+
+    .left-container{width:42%;opacity:0;transform:translateY(24px);animation:fadeInFromBottom .9s ease-out .4s forwards;display:flex;flex-direction:column;justify-content:center}
+    .left-container h1{color:#fff;font-size:clamp(2rem,5vw,3.2rem);margin-bottom:16px;line-height:1.15;text-shadow:0 3px 16px rgba(0,0,0,.4)}
+    .left-container p{color:#f3f6f8;font-size:clamp(1rem,2.2vw,1.15rem);margin-bottom:26px;line-height:1.7}
+    .hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+
+    .right-container{width:38%;opacity:0;transform:translateY(26px);animation:fadeInFromBottom 1s ease-out .7s forwards;display:flex;align-items:center;justify-content:center;padding-right:5px}
+    .right-container img{
+      width:100%;max-width:420px;aspect-ratio:4/5;object-fit:cover;object-position:center;border-radius:14px;box-shadow:0 14px 38px rgba(0,0,0,.35)
+    }
+    @keyframes fadeInFromBottom{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+
+    /* About (unchanged) */
+    .about{color:var(--white);background-size:cover;background-attachment:fixed}
+    .about::before{content:'';position:absolute;inset:0;background-color:rgba(38,70,83,.92);z-index:0}
+    .about-container{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+    .about-image{border-radius:12px;overflow:hidden;box-shadow:0 14px 36px rgba(0,0,0,.35);transform:translateY(40px);opacity:0;transition:all 1s ease}
+    .about-image.animated{transform:translateY(0);opacity:1}
+    .about-image img{width:100%;height:auto;display:block}
+    .about-text{display:flex;flex-direction:column;gap:14px}
+    .about-title{font-size:2.4rem;color:#fff}
+    .about-subtitle{font-size:1.05rem;color:rgba(255,255,255,.88)}
+    .about-description{color:#e9f3f3}
+    .about-feature{display:flex;align-items:flex-start;gap:12px}
+    .about-feature i{color:var(--secondary);font-size:1.15rem;margin-top:4px}
+    @media (max-width:1024px){.about-container{grid-template-columns:1fr;gap:28px}.about-title{font-size:2.1rem}}
+    @media (max-width:576px){.about-title{font-size:1.9rem}.about-subtitle{font-size:1rem}}
+
+    /* Services (unchanged) */
+    .services{background:var(--bg-gradient), url('/dentist-portfolio/b-1.jpg') center/cover no-repeat}
+    .services-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px}
+    .service-card{
+      position:relative;background:rgba(255,255,255,.95);border-radius:12px;overflow:hidden;
+      box-shadow:0 6px 18px rgba(0,0,0,.08);transition:transform .3s ease, box-shadow .3s ease;
+      transform:scale(.98);opacity:0;display:flex;flex-direction:column;height:100%;
+    }
+    .service-card.animated{transform:scale(1);opacity:1}
+    .service-card:hover{transform:translateY(-8px);box-shadow:0 14px 36px rgba(0,0,0,.12)}
+    .service-icon{height:90px;display:flex;align-items:center;justify-content:center;font-size:2.4rem;color:var(--primary);background-color:rgba(42,157,143,.12)}
+    .service-content{padding:24px;display:flex;flex-direction:column;gap:14px;flex:1}
+    .service-title{font-size:1.45rem;color:var(--dark)}
+    .service-description{color:var(--gray)}
+    .service-list{margin:6px 0 2px}
+    .service-list li{margin-bottom:9px;position:relative;padding-left:25px}
+    .service-list li::before{content:'\f00c';font-family:'Font Awesome 6 Free';font-weight:900;position:absolute;left:0;color:var(--primary)}
+    .video-circle{
+      position:absolute;top:10px;right:15px;width:100px;height:100px;border-radius:50%;overflow:hidden;border:3px solid white;
+      box-shadow:0 4px 10px rgba(0,0,0,.2);transition:transform .25s ease
+    }
+    .service-card:hover .video-circle{transform:scale(1.04) rotate(1deg)}
+    .video-circle video{width:100%;height:100%;object-fit:cover}
+    .service-actions{display:flex;justify-content:space-between;gap:12px;margin-top:auto;flex-wrap:wrap}
+    .service-actions .btn{padding:10px 20px;border-radius:24px}
+    .service-actions .btn-primary{background:var(--accent-dark)}
+    .service-actions .btn-primary:hover{background:#186fa6}
+    .services-bottom{text-align:center;margin-top:10px;padding:12px 0 0}
+    .services-more-btn{background:var(--accent);color:#fff;padding:14px 32px;border-radius:28px;font-weight:600;display:inline-block;letter-spacing:.4px}
+    .services-more-btn:hover{background:var(--accent-dark);transform:translateY(-2px);box-shadow:0 10px 24px rgba(45,156,219,.35)}
+
+    /* Testimonials, Blog (unchanged styles omitted for brevity) */
+
+    /* -------- ENHANCED INSURANCE SECTION -------- */
+    .insurance{
+      position:relative;overflow:hidden;z-index:0;
+      padding:100px 0;
+      --auroraA: #00e5ff;
+      --auroraB: #7c4dff;
+      --auroraC: #00ffa3;
+      --auroraD: #ff6ec7;
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(42,157,143,.06), transparent 60%), radial-gradient(1000px 500px at 90% 20%, rgba(45,156,219,.08), transparent 60%), linear-gradient(180deg,#ffffff 0%,#f3f8f9 100%);
+      isolation:isolate;
+    }
+    /* Moving aurora waves */
+    .insurance::before,
+    .insurance::after{
+      content:'';
+      position:absolute;inset:-20%;
+      background:
+        radial-gradient(40% 60% at 20% 30%, color-mix(in oklab, var(--auroraA), transparent 60%) 0%, transparent 70%),
+        radial-gradient(30% 50% at 80% 20%, color-mix(in oklab, var(--auroraB), transparent 65%) 0%, transparent 70%),
+        radial-gradient(50% 70% at 30% 80%, color-mix(in oklab, var(--auroraC), transparent 65%) 0%, transparent 75%);
+      filter: blur(40px);
+      opacity:.55;
+      z-index:0;
+      animation:auroraDrift 26s ease-in-out infinite alternate;
+      will-change:transform, opacity;
+    }
+    .insurance::after{
+      animation-duration:34s;
+      animation-direction:alternate-reverse;
+      opacity:.45;
+      transform:rotate(10deg) scale(1.05);
+    }
+    @keyframes auroraDrift{
+      0%{transform:translate3d(-2%, -1%, 0) scale(1)}
+      50%{transform:translate3d(1%, 2%, 0) scale(1.03)}
+      100%{transform:translate3d(3%, -2%, 0) scale(1.02)}
+    }
+    /* Soft spotlight that follows cursor */
+    .insurance .spotlight{
+      position:absolute;inset:0;pointer-events:none;z-index:0;
+      background: radial-gradient(300px 300px at var(--mx,50%) var(--my,50%), rgba(255,255,255,0.35), transparent 60%);
+      mix-blend-mode:soft-light;
+      transition:background-position .2s linear;
+    }
+
+    .insurance .section-title{color:#0c2730}
+    .insurance .section-title::after{content:'';display:block;width:70px;height:3px;background:var(--secondary);border-radius:2px;margin:12px auto 0}
+    .insurance .section-subtitle{color:#52646c}
+
+    .insurance-grid{
+      position:relative;z-index:1;
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:22px;align-items:center
+    }
+    .insurance-item{
+      position:relative;display:flex;align-items:center;justify-content:center;padding:24px;
+      border-radius:14px;
+      background:linear-gradient(180deg, rgba(255,255,255,.85), rgba(255,255,255,.65));
+      box-shadow:0 6px 18px rgba(0,0,0,.06), inset 0 0 0 1px rgba(255,255,255,.5);
+      backdrop-filter: blur(8px);
+      transition:transform .25s ease, box-shadow .25s ease;
+      overflow:hidden;
+      will-change:transform;
+    }
+    /* Animated RGB edge when hovering */
+    .insurance-item::before{
+      content:'';
+      position:absolute;inset:-2px;
+      border-radius:16px;
+      background:conic-gradient(from var(--angle,0deg),
+        #00e5ff, #7c4dff, #00ffa3, #ff6ec7, #00e5ff);
+      filter:blur(12px);
+      opacity:.0;
+      transition:opacity .2s ease;
+      animation:spinHue 6s linear infinite;
+      z-index:-1;
+    }
+    @keyframes spinHue{to{--angle:360deg}}
+    .insurance-item:hover{transform:translateY(-6px) scale(1.01);box-shadow:0 16px 36px rgba(0,0,0,.10)}
+    .insurance-item:hover::before{opacity:.35}
+    .insurance-item img{max-height:42px;max-width:100%;filter:grayscale(100%);opacity:.85;transition:filter .25s ease,opacity .25s ease,transform .25s ease}
+    .insurance-item:hover img{filter:grayscale(0%);opacity:1;transform:translateY(-1px)}
+    .insurance-note{text-align:center;margin-top:26px;color:#4f626a;position:relative;z-index:1}
+
+    /* Floating glass shards for depth */
+    .insurance .float-blob{
+      position:absolute;opacity:.22;filter:blur(1px);z-index:0;pointer-events:none;
+      width:220px;height:220px;border-radius:30% 70% 50% 50%/50% 40% 60% 50%;
+      background:linear-gradient(135deg, rgba(255,255,255,.35), rgba(255,255,255,.05));
+      box-shadow:inset 0 0 30px rgba(255,255,255,.35);
+      animation:blobFloat var(--t,18s) ease-in-out infinite;
+      transform:translate3d(0,0,0);
+      will-change:transform;
+    }
+    .insurance .float-blob.b1{top:-60px;left:-40px;--t:22s}
+    .insurance .float-blob.b2{bottom:-80px;right:-60px;--t:26s;animation-direction:reverse}
+    @keyframes blobFloat{
+      0%{transform:translate3d(0,0,0) rotate(0deg)}
+      50%{transform:translate3d(14px,-18px,0) rotate(8deg)}
+      100%{transform:translate3d(0,0,0) rotate(0deg)}
+    }
+
+    /* -------- ENHANCED CONTACT SECTION -------- */
+    .contact{
+      position:relative;overflow:hidden;z-index:0;
+      background:linear-gradient(180deg,#0d1b2a 0%, #162a3a 40%, #0e2130 100%);
+      color:#eaf4ff;
+      padding:110px 0;
+      isolation:isolate;
+    }
+    .contact .section-title{color:#eaf6ff}
+    .contact .section-title::after{content:'';display:block;width:80px;height:3px;background:var(--accent);border-radius:2px;margin:12px auto 0}
+
+    /* RGB flowing background layers */
+    .contact::before,
+    .contact::after{
+      content:'';
+      position:absolute;inset:-25%;
+      background:
+        radial-gradient(35% 55% at 15% 25%, rgba(0,229,255,.25), transparent 60%),
+        radial-gradient(30% 50% at 85% 20%, rgba(124,77,255,.25), transparent 65%),
+        radial-gradient(45% 65% at 35% 85%, rgba(0,255,163,.22), transparent 65%),
+        radial-gradient(40% 60% at 75% 75%, rgba(255,110,199,.2), transparent 70%);
+      filter: blur(50px);
+      animation:contactAurora 28s ease-in-out infinite;
+      opacity:.65;
+      z-index:0;
+      will-change:transform, opacity;
+    }
+    .contact::after{
+      animation-duration:36s;
+      animation-direction:reverse;
+      opacity:.45;
+      transform:rotate(8deg) scale(1.06);
+    }
+    @keyframes contactAurora{
+      0%{transform:translate3d(-2%, -1%, 0) scale(1)}
+      50%{transform:translate3d(1%, 2%, 0) scale(1.02)}
+      100%{transform:translate3d(3%, -2%, 0) scale(1.01)}
+    }
+
+    /* Floating bokeh orbs */
+
+
+    /* Foreground content styling */
+    .contact .container{position:relative;z-index:1}
+    .contact-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:36px;align-items:start}
+    .contact-info{display:flex;flex-direction:column;gap:22px}
+    .contact-card{
+      background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.02));
+      border:1px solid rgba(255,255,255,.15);
+      border-radius:14px;padding:20px;
+      box-shadow:0 10px 26px rgba(0,0,0,.18);
+      display:flex;gap:14px;align-items:flex-start;
+      backdrop-filter: blur(10px);
+      color:#eaf6ff;
+    }
+    .contact-icon{
+      width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;
+      background:conic-gradient(from var(--ang,0deg), #00e5ff, #7c4dff, #00ffa3, #ff6ec7, #00e5ff);
+      animation:spinHue 8s linear infinite;
+      box-shadow:0 6px 14px rgba(42,157,143,.35)
+    }
+    .contact-text h3{margin-bottom:6px;font-size:1.1rem;color:#eaf6ff}
+    .contact-hours li{display:flex;justify-content:space-between;margin-bottom:6px;color:#cbe6ff}
+    .contact-hours li span:first-child{font-weight:600;color:#eaf6ff}
+
+    .contact-form{
+      background:linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.04));
+      border:1px solid rgba(255,255,255,.18);
+      padding:26px;border-radius:14px;box-shadow:0 10px 26px rgba(0,0,0,.22);
+      backdrop-filter: blur(12px);
+    }
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    @media (max-width:600px){.form-row{grid-template-columns:1fr}}
+    .form-group{margin-bottom:16px}
+    .form-group label{display:block;margin-bottom:8px;font-weight:600;color:#eaf6ff}
+    .form-control{
+      width:100%;padding:12px 14px;border:1px solid rgba(255,255,255,.28);border-radius:10px;font-family:inherit;
+      transition:border-color .2s ease, box-shadow .2s ease;background:rgba(255,255,255,.08);color:#eaf6ff
+    }
+    .form-control::placeholder{color:#d3e7ffb0}
+    .form-control:focus{outline:none;border-color:#8fd4ff;box-shadow:0 0 0 4px rgba(143,212,255,.18);background:rgba(255,255,255,.12)}
+    textarea.form-control{min-height:140px;resize:vertical}
+    .consent{display:flex;gap:10px;align-items:flex-start;font-size:.93rem;color:#d3e7ff;margin:6px 0 10px}
+    .consent input{margin-top:4px}
+    .contact .btn{
+      position:relative;overflow:hidden;border-radius:28px;
+      background:linear-gradient(90deg, #00e5ff, #7c4dff, #00ffa3, #ff6ec7);
+      background-size:300% 100%;
+      animation:btnFlow 8s ease-in-out infinite;
+      box-shadow:0 8px 24px rgba(0,0,0,.25), 0 0 18px rgba(124,77,255,.35);
+    }
+    @keyframes btnFlow{
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+    }
+    .map-card{margin-top:26px;border-radius:14px;overflow:hidden;box-shadow:0 10px 26px rgba(0,0,0,.28);border:1px solid rgba(255,255,255,.2)}
+    .map-card iframe{width:100%;height:320px;border:0;filter:saturate(1.05) contrast(1.02)}
+
+    /* Respect reduced motion */
+    @media (prefers-reduced-motion:reduce){
+      .insurance::before,.insurance::after,.contact::before,.contact::after,.insurance .float-blob,.contact .orb,.insurance .spotlight,.contact .contact-icon{animation:none!important}
+      .insurance .insurance-item::before{opacity:.15}
+    }
+
+    /* Footer (unchanged) */
+    footer{background:var(--dark);color:#fff;padding:52px 0 22px}
+    .footer-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:26px;margin-bottom:34px}
+    .footer-logo{font-size:1.5rem;font-weight:700;margin-bottom:16px;color:#fff}
+    .footer-about{margin-bottom:18px;opacity:.85}
+    .social-links{display:flex;gap:12px}
+    .social-link{width:40px;height:40px;border-radius:50%;background-color:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;transition:all .3s ease}
+    .social-link:hover{background:var(--primary);transform:translateY(-3px)}
+    .footer-links h3{font-size:1.1rem;margin-bottom:16px;position:relative;padding-bottom:8px}
+    .footer-links h3::after{content:'';position:absolute;bottom:0;left:0;width:40px;height:2px;background:var(--primary)}
+    .footer-links ul li{margin-bottom:10px}
+    .footer-links a{opacity:.85;transition:all .2s ease}
+    .footer-links a:hover{opacity:1;color:var(--primary);padding-left:4px}
+    .footer-bottom{text-align:center;padding-top:18px;border-top:1px solid rgba(255,255,255,.12);opacity:.85;font-size:.95rem}
+
+    /* Utilities */
+    @keyframes fadeInLeft{from{opacity:0;transform:translateX(-40px)}to{opacity:1;transform:translateX(0)}}
+    @keyframes fadeInRight{from{opacity:0;transform:translateX(40px)}to{opacity:1;transform:translateX(0)}}
+
+    /* Responsive header/nav */
+    @media (max-width:768px){
+      .nav-menu{
+        position:fixed;top:76px;left:-100%;width:100%;height:calc(100vh - 76px);
+        background:#fff;flex-direction:column;align-items:center;justify-content:center;transition:left .4s ease;
+        box-shadow:0 10px 24px rgba(0,0,0,.12)
+      }
+      .nav-menu.active{left:0}
+      .nav-menu li{margin:14px 0}
+      .hamburger{display:block}
+    }
+
+    /* Responsive hero */
+    @media (max-width:1024px){.left-container{width:52%}.right-container{width:42%}}
+    @media (max-width:768px){
+      .hero{flex-direction:column;padding:18px 3%;height:auto;min-height:96vh;gap:34px;justify-content:flex-end}
+      .left-container,.right-container{width:100%}
+      .left-container{text-align:center}
+      .hero-btns{justify-content:center}
+      .right-container img{max-width:520px;width:100%}
+    }
+    @media (max-width:576px){
+      .section{padding:60px 0}
+      .section-title{font-size:2rem}
+      .btn{width:100%;text-align:center}
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header id="header">
+    <div class="container header-container">
+      <a href="#home" class="logo">
+        <img src="https://cdn-icons-png.flaticon.com/512/2913/2913109.png" alt="BrightSmile Dental Logo"/> BrightSmile
+      </a>
+      <nav>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#insurance">Insurance</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-controls="navMenu" aria-expanded="false">
+          <i class="fas fa-bars"></i>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <div class="video-background" aria-hidden="true">
+        <video autoplay muted loop playsinline preload="metadata">
+          <source src="hero2.mp4" type="video/mp4"/>
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <div class="left-container">
+        <h1>Your Beautiful, Healthy Smile Starts Here</h1>
+        <p>At BrightSmile Dental, we provide personalized dental care.</p>
+        <div class="hero-btns">
+          <a href="#contact" class="btn">Book Appointment</a>
+          <a href="#services" class="btn btn-outline">Our Services</a>
+        </div>
+      </div>
+
+      <div class="right-container">
+        <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=1528&auto=format&fit=crop" alt="Modern dental care environment"/>
+      </div>
+    </section>
+
+    <!-- Services (unchanged markup omitted for brevity) -->
+    <section class="section services" id="services">
+      <div class="container">
+        <h2 class="section-title">Our Dental Services</h2>
+        <p class="section-subtitle">Comprehensive care for your entire family's dental needs</p>
+
+        <div class="services-container">
+          <!-- ... keep your service cards here unchanged ... -->
+        </div>
+
+        <div class="services-bottom">
+          <a href="#services" class="services-more-btn">See More Services</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About (unchanged) -->
+    <section class="section about" id="about" style="background-image:url('https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=1470&auto=format&fit=crop');">
+      <div class="container about-container">
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=1470&auto=format&fit=crop" alt="Dr. Sarah Johnson, Dentist"/>
+        </div>
+        <div class="about-text">
+          <h2 class="about-title">About Our Practice</h2>
+          <p class="about-subtitle">Committed to excellence in dental care since 2010</p>
+          <p class="about-description">BrightSmile Dental was founded with a simple mission: to provide exceptional dental care in a warm, welcoming environment. We believe that every patient deserves personalized attention and the highest quality treatment.</p>
+          <div class="about-feature">
+            <i class="fas fa-award"></i>
+            <div>
+              <h4>15+ Years Experience</h4>
+              <p>Our team brings decades of combined expertise to your care.</p>
+            </div>
+          </div>
+          <div class="about-feature">
+            <i class="fas fa-user-md"></i>
+            <div>
+              <h4>Meet Dr. Sarah Johnson</h4>
+              <p>Harvard-trained dentist with specialization in cosmetic dentistry.</p>
+            </div>
+          </div>
+          <div class="about-feature">
+            <i class="fas fa-heart"></i>
+            <div>
+              <h4>Patient-Centered Care</h4>
+              <p>Your comfort and satisfaction are our top priorities.</p>
+            </div>
+          </div>
+          <a href="#contact" class="btn">Schedule a Consultation</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials (unchanged markup omitted for brevity) -->
+
+    <!-- Insurance (ENHANCED) -->
+    <section class="section insurance" id="insurance" data-aos="zoom-in-up">
+      <!-- spotlight layer -->
+      <div class="spotlight" aria-hidden="true"></div>
+      <!-- floating blobs -->
+      <div class="float-blob b1" aria-hidden="true"></div>
+      <div class="float-blob b2" aria-hidden="true"></div>
+
+      <div class="container">
+        <h2 class="section-title">Accepted Insurance Providers</h2>
+        <p class="section-subtitle">We work with most major dental insurance plans</p>
+
+        <div class="insurance-grid">
+          <div class="insurance-item">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Aetna_logo.svg/2560px-Aetna_logo.svg.png" alt="Aetna" loading="lazy">
+          </div>
+          <div class="insurance-item">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Cigna_logo.svg/2560px-Cigna_logo.svg.png" alt="Cigna" loading="lazy">
+          </div>
+          <div class="insurance-item">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Delta_Dental_logo.svg/1200px-Delta_Dental_logo.svg.png" alt="Delta Dental" loading="lazy">
+          </div>
+          <div class="insurance-item">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Blue_Cross_Blue_Shield_Association_logo.svg/2560px-Blue_Cross_Blue_Shield_Association_logo.svg.png" alt="Blue Cross Blue Shield" loading="lazy">
+          </div>
+          <div class="insurance-item">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/UnitedHealth_Group_logo.svg/2560px-UnitedHealth_Group_logo.svg.png" alt="UnitedHealthcare" loading="lazy">
+          </div>
+          <div class="insurance-item">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/MetLife_logo.svg/2560px-MetLife_logo.svg.png" alt="MetLife" loading="lazy">
+          </div>
+        </div>
+        <p class="insurance-note">Don't see your provider? Call us to verify coverage options.</p>
+      </div>
+    </section>
+
+    <!-- Blog (unchanged markup omitted for brevity) -->
+
+    <!-- Contact (ENHANCED) -->
+    <section class="section contact" id="contact">
+      <!-- floating orbs -->
+      <span class="orb o1" aria-hidden="true"></span>
+      <span class="orb o2" aria-hidden="true"></span>
+      <span class="orb o3" aria-hidden="true"></span>
+      <span class="orb o4" aria-hidden="true"></span>
+      <span class="orb o5" aria-hidden="true"></span>
+
+      <div class="container">
+        <h2 class="section-title">Contact Us</h2>
+        <p class="section-subtitle">Schedule your appointment today</p>
+
+        <div class="contact-container">
+          <div class="contact-info">
+            <div class="contact-card">
+              <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div class="contact-text">
+                <h3>Our Location</h3>
+                <p>123 Dental Avenue, Suite 100<br/>New York, NY 10001</p>
+              </div>
+            </div>
+            <div class="contact-card">
+              <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+              <div class="contact-text">
+                <h3>Call Us</h3>
+                <p>Phone: (212) 555-1234<br/>Fax: (212) 555-5678</p>
+              </div>
+            </div>
+            <div class="contact-card">
+              <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+              <div class="contact-text">
+                <h3>Email Us</h3>
+                <p>info@brightsmiledental.com<br/>appointments@brightsmiledental.com</p>
+              </div>
+            </div>
+            <div class="contact-card">
+              <div class="contact-icon"><i class="fas fa-clock"></i></div>
+              <div class="contact-text">
+                <h3>Office Hours</h3>
+                <ul class="contact-hours">
+                  <li><span>Monday - Friday</span><span>8:00 AM - 6:00 PM</span></li>
+                  <li><span>Saturday</span><span>9:00 AM - 3:00 PM</span></li>
+                  <li><span>Sunday</span><span>Closed</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form" role="form" aria-labelledby="contact-title">
+            <form id="appointmentForm">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Full Name</label>
+                  <input type="text" id="name" class="form-control" required/>
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" class="form-control" required/>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="phone">Phone Number</label>
+                  <input type="tel" id="phone" class="form-control" required/>
+                </div>
+                <div class="form-group">
+                  <label for="service">Service Needed</label>
+                  <select id="service" class="form-control" required>
+                    <option value="">Select a service</option>
+                    <option value="cleaning">Dental Cleaning</option>
+                    <option value="whitening">Teeth Whitening</option>
+                    <option value="veneers">Veneers Consultation</option>
+                    <option value="implants">Dental Implants</option>
+                    <option value="invisalign">Invisalign Consultation</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="message">Additional Information</label>
+                <textarea id="message" class="form-control" placeholder="Share any details or preferred dates"></textarea>
+              </div>
+              <label class="consent">
+                <input type="checkbox" required/>
+                <span>I consent to BrightSmile storing my submitted information to respond to my inquiry.</span>
+              </label>
+              <button type="submit" class="btn" aria-label="Request Appointment">Request Appointment</button>
+            </form>
+
+            <div class="map-card">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215256751277!2d-73.9878449240061!3d40.74844097138952!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1717180000000!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-container">
+        <div class="footer-col">
+          <div class="footer-logo">BrightSmile</div>
+          <p class="footer-about">BrightSmile Dental provides exceptional dental care in a comfortable environment. Our team is dedicated to helping achieve and maintain optimal oral health.</p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#testimonials">Testimonials</a></li>
+              <li><a href="#insurance">Insurance</a></li>
+              <li><a href="#blog">Blog</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-col">
+          <div class="footer-links">
+            <h3>Services</h3>
+            <ul>
+              <li><a href="#services">Preventive Care</a></li>
+              <li><a href="#services">Cosmetic Dentistry</a></li>
+              <li><a href="#services">Restorative Dentistry</a></li>
+              <li><a href="#services">Dental Implants</a></li>
+              <li><a href="#services">Invisalign</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-col">
+          <div class="footer-links">
+            <h3>Contact Info</h3>
+            <ul>
+              <li><i class="fas fa-map-marker-alt"></i> 123 Dental Ave, NY 10001</li>
+              <li><i class="fas fa-phone-alt"></i> (212) 555-1234</li>
+              <li><i class="fas fa-envelope"></i> info@brightsmiledental.com</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 BrightSmile Dental. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Header scroll effect
+    window.addEventListener('scroll', function () {
+      const header = document.getElementById('header');
+      if (window.scrollY > 50) header.classList.add('scrolled'); else header.classList.remove('scrolled');
+    });
+
+    // Mobile menu toggle
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+    if (hamburger) {
+      hamburger.addEventListener('click', function () {
+        const isActive = navMenu.classList.toggle('active');
+        hamburger.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+        hamburger.innerHTML = isActive ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+      });
+    }
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+        hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+      });
+    });
+
+    // Smooth scrolling with header offset
+    function smoothScrollWithOffset(targetSelector) {
+      const target = document.querySelector(targetSelector);
+      if (!target) return;
+      const header = document.getElementById('header');
+      const headerHeight = header ? header.offsetHeight : 0;
+      const elementPosition = target.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - (headerHeight + 10);
+      window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+    }
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href.length > 1 && document.querySelector(href)) {
+          e.preventDefault();
+          smoothScrollWithOffset(href);
+        }
+      });
+    });
+
+    // Simple animate-on-scroll
+    function animateOnScroll() {
+      const elements = document.querySelectorAll('.about-image, .service-card');
+      elements.forEach(el => {
+        const rectTop = el.getBoundingClientRect().top;
+        const screenPos = window.innerHeight * 0.85;
+        if (rectTop < screenPos) el.classList.add('animated');
+      });
+    }
+    animateOnScroll();
+    window.addEventListener('scroll', animateOnScroll);
+
+    // Basic form handler (demo)
+    const form = document.getElementById('appointmentForm');
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('Thank you! Your appointment request has been received.');
+        form.reset();
+      });
+    }
+
+    // Insurance spotlight follow (cursor-based)
+    const insuranceSection = document.querySelector('.insurance');
+    const spotlight = insuranceSection ? insuranceSection.querySelector('.spotlight') : null;
+    if (insuranceSection && spotlight && window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+      insuranceSection.addEventListener('pointermove', (e) => {
+        const rect = insuranceSection.getBoundingClientRect();
+        const x = ((e.clientX - rect.left)/rect.width)*100;
+        const y = ((e.clientY - rect.top)/rect.height)*100;
+        spotlight.style.setProperty('--mx', x + '%');
+        spotlight.style.setProperty('--my', y + '%');
+      });
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration:800, easing:'ease', once:false, mirror:true, anchorPlacement:'top-bottom' });
+  </script>
+</body>
+</html>
