@@ -204,6 +204,18 @@
             padding: 0 5%;
         }
 
+        /* Fallback image for iOS video autoplay issues */
+        .hero-fallback {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            z-index: -2; /* Behind video but above any other background */
+        }
+
         .video-background {
             position: absolute;
             top: 0;
@@ -1722,29 +1734,23 @@
     </header>
 
     <!-- Hero Section -->
+    <!-- Hero Section -->
     <section class="hero" id="hero">
-        <div class="video-background">
-            
-                   <!-- Fallback poster image -->
+        
+        <!-- Fallback poster image -->
         <img 
-            src="hero-4.jpeg" 
+            src="banner.png" 
             alt="Hero background"
             class="hero-fallback"
             loading="eager"
         >
         
-        
-        
-        <!-- Your hero content -->
-        <div class="hero-content">
-            <video autoplay loop muted playsinline>
-                <source src="hero.mp4" type="video/mp4">
+        <div class="video-background">
+            <video autoplay muted loop>
+                <!-- Replace with your video source -->
+                <source src="hero.mp4 " type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            
-            
-            
-        </div>
         </div>
         
         <div class="left-container content-container fade-right">
@@ -2548,4 +2554,5 @@
 </body>
 
 </html>
+
 
