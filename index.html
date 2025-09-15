@@ -462,66 +462,46 @@
 
         /* Small mobile styles */
         @media (max-width: 480px) {
-            .hero {
-                padding: 15px 2%;
-                gap: 30px;
+                        .hero {
+            gap: 18px;
             }
-            
-            .left-container .content-container {
-                padding: 15px;
-            }
-            
-            .hero-btns {
-                flex-direction: column;
-                align-items: center;
-                gap: 15px;
-                margin-bottom: 25px;
-            }
-            
-            .btn {
-                width: 90%;
-                max-width: 280px;
-                padding: 15px 20px;
-            }
-            
-            .right-container img {
-                height: 380px;
-                border-radius: 15px;
-            }
-            
-            /* Adjust animation delays for smaller screens if needed */
-            .left-container {
-                animation-delay: 4.5s; /* Slightly faster on small screens */
-            }
-            
-            .right-container {
-                animation-delay: 5.3s; /* Slightly faster on small screens */
-            }
-        }
 
-            /* Extra small mobile styles */
-        @media (max-width: 380px) {
-            .hero {
-                height: 100vh;
-                padding: 10px 2%;
-                gap: 25px;
+            .left-container .content-container {
+            padding: 12px;
             }
-            
+
             .left-container h1 {
-                font-size: 1.8rem;
-                margin-bottom: 15px;
+            font-size: clamp(1.4rem, 6vw, 1.7rem);
+            margin-bottom: 10px;
             }
-            
+
             .left-container p {
-                font-size: 0.95rem;
-                margin-bottom: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 16px;
             }
-            
+
+            .hero-btns {
+            gap: 10px;
+            margin-bottom: 10px;
+            }
+
+            .btn {
+            padding: 12px 18px;
+            }
+
             .right-container img {
-                height: 400px;
-                width: 60%;
+            height: 300px; /* reduce image height */
+            max-width: 200px;
+            border-radius: 12px;
             }
-        }
+
+            
+            }
+
+            /* Optional: when height is especially short, prioritize text */
+            @media (max-width: 380px) and (max-height: 700px) {
+            .right-container img { height: 230px; }
+            }
 
         
 
@@ -2538,6 +2518,7 @@
 </body>
 
 </html>
+
 
 
 
